@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat :3</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <h1>Chat :3</h1>
+
+  <div id="chat"></div>
+
+  <label for="message">Message:</label>
+  <input id="message" type="text" name="message">
+  <button id="send" onclick="sendMessage()">➤</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    function sendMessage() {
+      const texte = document.getElementById('message').value;
+
+      if (texte.length > 0) {
+        socket.emit('chat', texte);
+      }
+
+      document.getElementById("message").value = '';
+    }
+
+    socket.on('chat', (msg) => {
+      document.getElementById("chat").innerHTML += `${msg}<br>`;
+    });
+
+    const input = document.getElementById("message");
+
+    input.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        document.getElementById("send").click();
+      }
+    });
+  </script>
+</body>
+</html>
