@@ -1,1 +1,4 @@
-[2024-02-27, 10:49:03 a.m.] [Server]: Server is running on http://localhost:3000
+[7/23/2024, 1:14:01 PM] [Server]: Server is running on http://localhost:3000
+[7/23/2024, 1:14:21 PM] [Server]: ::ffff:127.0.0.1 connected
+[7/23/2024, 1:14:40 PM] [::ffff:127.0.0.1]: gros caca mou
+[7/23/2024, 1:14:45 PM] [Server]: ::ffff:127.0.0.1 disconnected
